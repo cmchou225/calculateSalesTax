@@ -22,7 +22,7 @@ var companySalesData = [
   }
 ];
 
-//function to add two
+//function to add two values
 function add(a, b){
   return a + b;
 }
@@ -50,9 +50,9 @@ function calculateSalesTax (salesData, taxRates){
     //create variable for properties of resulting object
     salesTotal = obj.sales.reduce(add,0);
     //calculate total sales of the object
-    taxRate = getTaxRate(obj, taxRates);
+    var regionTaxRate = getTaxRate(obj, taxRates);
     //obtain tax rate for the object looped
-    taxTotal = salesTax(salesTotal, taxRate);
+    taxTotal = salesTax(salesTotal, regionTaxRate);
     //calculate total sales tax for the object
 
     //if company does not exist in our resultObj,
