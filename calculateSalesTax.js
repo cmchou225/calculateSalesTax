@@ -58,10 +58,11 @@ function calculateSalesTax (salesData, taxRates){
     //if company does not exist in our resultObj,
     // create a new object with required return properties starting with value 0
     if(!resultObj[companyName]){
-      resultObj[companyName] = new Object;
-      resultObj[companyName].totalSales = 0;
-      resultObj[companyName].totalTaxes = 0;
+      resultObj[companyName] = {
+        totalSales: 0,
+        totalTaxes: 0
       }
+    }
     //add the sales and tax totals to the object
     resultObj[companyName].totalSales += salesTotal;
     resultObj[companyName].totalTaxes += taxTotal;
