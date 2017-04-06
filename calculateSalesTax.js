@@ -45,11 +45,11 @@ function calculateSalesTax (salesData, taxRates){
   //loop through each object in salesData array
   for(var obj of salesData){
     var companyName = obj['name'];
-    //define name to be the name of the value of 'name' property in looped object
+    //create variable to store company name of each looped object
     var salesTotal, taxTotal;
-    //create variable for properties of resulting object
+    //create variable for properties of final result object (resultObj)
     salesTotal = obj.sales.reduce(add,0);
-    //calculate total sales of the object
+    //calculate total sales of the current looped object
     var regionTaxRate = getTaxRate(obj, taxRates);
     //obtain tax rate for the object looped
     taxTotal = salesTax(salesTotal, regionTaxRate);
